@@ -13,6 +13,8 @@ module.exports = (nextConfig = {}) => {
 
       const enableSvg = nextConfig.enableSvg || false;
 
+      const limit = nextConfig.inlineFontLimit || 8192;
+
       let testPattern = /\.(woff|woff2|eot|ttf|otf)$/;
 
       if (enableSvg) testPattern = /\.(woff|woff2|eot|ttf|otf|svg)$/;
@@ -27,7 +29,7 @@ module.exports = (nextConfig = {}) => {
           {
             loader: require.resolve('url-loader'),
             options: {
-              limit: 8192,
+              limit,
               fallback: require.resolve('file-loader'),
               publicPath: `${assetPrefix}/_next/static/chunks/fonts/`,
               outputPath: `${isServer ? "../" : ""}static/chunks/fonts/`,
