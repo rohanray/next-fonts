@@ -71,6 +71,22 @@ module.exports = withFonts({
 });
 ```
 
+### inlineFontLimit
+Inlines fonts with sizes below inlineFontLimit to Base64. Default value is 8192.
+
+Example usage:
+
+```js
+// next.config.js
+const withFonts = require('next-fonts')
+module.exports = withFonts({
+  inlineFontLimit: 16384,
+  webpack(config, options) {
+    return config
+  }
+})
+```
+
 ## Examples repository
 
 Please see https://github.com/rohanray/next-fonts-example for usage with Nextjs v9.2+
