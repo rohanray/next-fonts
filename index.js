@@ -15,9 +15,9 @@ module.exports = (nextConfig = {}) => {
 
       const limit = nextConfig.inlineFontLimit || 8192;
 
-      let testPattern = /\.(woff|woff2|eot|ttf|otf)$/;
+      let testPattern = /\.(woff(2)?|eot|ttf|otf)(\?v=\d+\.\d+\.\d+)$/;
 
-      if (enableSvg) testPattern = /\.(woff|woff2|eot|ttf|otf|svg)$/;
+      if (enableSvg) testPattern = /\.(woff(2)?|eot|ttf|otf|svg)(\?v=\d+\.\d+\.\d+)?$/;
 
       config.module.rules.push({
         test: testPattern,
