@@ -1,3 +1,6 @@
+# Note:
+####  This plugin was created more than 2 years back. Nextjs did not have first class support for importing fonts without using plugins during those days. Hence, this plugin might not be needed for current and newer versions of Next.js. Please see https://github.com/rohanray/next-fonts/issues/34
+
 # Next.js + Fonts
 
 Import fonts in [Next.js](https://github.com/zeit/next.js)
