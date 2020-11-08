@@ -22,10 +22,8 @@ module.exports = (nextConfig = {}) => {
 
       config.module.rules.push({
         test: testPattern,
-        issuer: {
-          // Next.js already handles url() in css/sass/scss files
-          test: /\.\w+(?<!(s?c|sa)ss)$/i,
-        },
+        // Next.js already handles url() in css/sass/scss files
+        issuer: /\.\w+(?<!(s?c|sa)ss)$/i,
         use: [
           {
             loader: require.resolve('url-loader'),
